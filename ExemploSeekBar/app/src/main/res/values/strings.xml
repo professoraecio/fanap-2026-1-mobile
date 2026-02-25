@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Exemplo SeekBar</string>
+
+    <string name="text_view_altura">Altura</string>
+    <string name="text_view_000">000</string>
+
 </resources>
