@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
                 // bug fix mes
                 mes++;
-                dataEscolhidaTextView.setText("" + dia + "/" + mes + "/" + ano);
+                String mesFormatado = mes < 10 ? "0" + mes : "" + mes;
+                dataEscolhidaTextView.setText("" + dia + "/" + mesFormatado + "/" + ano);
             }
         }, utilDate.getAnoAtual(),utilDate.getMesAtual() ,utilDate.getDiaAtual() );
         datePickerDialog.show();
