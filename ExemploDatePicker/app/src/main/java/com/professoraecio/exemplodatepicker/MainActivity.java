@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
+                // bug fix mes
+                mes++;
                 dataEscolhidaTextView.setText("" + dia + "/" + mes + "/" + ano);
             }
         }, utilDate.getAnoAtual(),utilDate.getMesAtual() ,utilDate.getDiaAtual() );
