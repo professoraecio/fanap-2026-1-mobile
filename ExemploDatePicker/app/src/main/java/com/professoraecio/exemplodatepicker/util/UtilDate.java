@@ -16,7 +16,7 @@ public class UtilDate {
         return mes;
     }
 
-    public int get_diaAtual(){
+    public int getDiaAtual(){
         Calendar calendar = Calendar.getInstance();
         int dia = calendar.get(Calendar.DAY_OF_MONTH);
         return dia;
