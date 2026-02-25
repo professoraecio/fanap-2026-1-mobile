@@ -24,7 +24,9 @@
         <NumberPicker
             android:id="@+id/idadeNumberPicker"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:gravity="center|center_horizontal"></NumberPicker>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
