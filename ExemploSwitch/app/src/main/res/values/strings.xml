@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Exemplo Switch</string>
+
+    <string name="label_configuracoes">Configurações</string>
+    <string name="label_dark_mode">Usar Dark Mode</string>
+    <string name="label_receber_notificacoes">Receber Notificações</string>
+
+    <string name="label_ligado">Ligado</string>
+    <string name="label_desligado">Desligado</string>
+
+</resources>
