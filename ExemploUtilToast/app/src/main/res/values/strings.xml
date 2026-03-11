@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Exemplo Util Toast</string>
+
+    <string name="label_msg_curta">Mensagem Curta</string>
+    <string name="label_msg_longa">Mensagem Longa</string>
+
 </resources>
