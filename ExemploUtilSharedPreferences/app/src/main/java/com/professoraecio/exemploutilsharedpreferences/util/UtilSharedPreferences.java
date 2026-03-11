@@ -22,5 +22,13 @@ public class UtilSharedPreferences {
     }
 
     // Recuperar o dado (String)
-
+    public static String getString(Context context,
+                                   String key,
+                                   String defaultValue){
+        SharedPreferences
+                sharedPreferences =
+                context.getSharedPreferences(PREFERENCE_NAME,
+                        Context.MODE_PRIVATE);
+        return sharedPreferences.getString(key,defaultValue);
+    }
 }
