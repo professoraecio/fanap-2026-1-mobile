@@ -1,0 +1,27 @@
+{
+  "name": "agendaapi",
+  "version": "1.0.0",
+  "description": "Uma api rest para consumir dados de uma agenda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "Agenda"
+  ],
+  "author": "Professor Aécio",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "morgan": "^1.10.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
