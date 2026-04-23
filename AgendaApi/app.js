@@ -10,12 +10,14 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 
+/*
 // Config rota principal
 app.use(URL_BASE,(req,res,next) => {
     res.status(200).send({
         resposta : 'URL do app funcionou'
     });
 });
+*/
 
 // Rota não encontrada
 app.use((req,res,next) => {
