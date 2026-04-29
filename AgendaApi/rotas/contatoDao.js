@@ -128,4 +128,39 @@ router.post('/update', (req, res, next) => {
     });
 });
 
+// http://localhost:3000/api.agenda/contato-dao/delete
+/*
+    {
+        "id_contato" : 1
+    }
+*/
+router.post('/delete', (req, res, next) => {
+    const { id_contato } = req.body
+    const contato = { id_contato }
+    mysql.getConnection((error, conn) => {
+        if (error) {
+            return res.status(500).send({
+                error: error,
+                response: null
+            });
+        }
+        conn.query(
+            'DELETE FROM contato WHERE id = ?;',
+            [contato.id_contato],
+            (error, resultado, field) => {
+                conn.release();
+                if (error) {
+                    return res.status(500).send({
+                        error: error,
+                        response: null
+                    });
+                }
+                res.status(201).send({
+                    response: 'Contato excluído com sucesso'
+                });
+            }
+        )
+    });
+});
+
 module.exports = router;
