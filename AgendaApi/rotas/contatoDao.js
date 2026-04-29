@@ -64,4 +64,30 @@ router.get('/getId', (req, res, next) => {
     });
 });
 
+// http://localhost:3000/api.agenda/contato-dao/getAll
+router.get('/getAll', (req, res, next) => {
+    mysql.getConnection((error, conn) => {
+        if (error) {
+            return res.status(500).send({
+                error: error,
+                response: null
+            });
+        }
+        conn.query(
+            'SELECT * FROM contato;',
+            (error, resultado, fields) => {
+                if (error) {
+                    return res.status(500).send({
+                        error: error,
+                        response: null
+                    });
+                }
+                return res.status(200).send({
+                    response : resultado
+                });
+            }
+        )
+    });
+});
+
 module.exports = router;
