@@ -89,5 +89,43 @@ router.get('/getAll', (req, res, next) => {
         )
     });
 });
+// http://localhost:3000/api.agenda/contato-dao/update
+/*
+    {
+        "id_contato" : 2,
+        "nome" : "Maria",
+        "fone" : "(88)88888-8888",
+        "email" : "maria@gmail.com"
+    }
+*/
+router.post('/update', (req, res, next) => {
+    const { id_contato , nome, fone, email } = req.body
+    const contato = { id_contato , nome, fone, email }
+    mysql.getConnection((error, conn) => {
+        if (error) {
+            return res.status(500).send({
+                error: error,
+                response: null
+            });
+        }
+        conn.query(
+            'UPDATE contato SET nome = ? , fone = ? , email = ? WHERE id = ?;',
+            [contato.nome, contato.fone, contato.email, contato.id_contato],
+            (error, resultado, field) => {
+                conn.release();
+                if (error) {
+                    return res.status(500).send({
+                        error: error,
+                        response: null
+                    });
+                }
+                res.status(201).send({
+                    response: 'Contato atualizado com sucesso',
+                    'Dados do contato' : contato
+                });
+            }
+        )
+    });
+});
 
 module.exports = router;
